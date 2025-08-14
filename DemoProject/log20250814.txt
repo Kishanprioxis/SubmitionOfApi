@@ -1,0 +1,451 @@
+2025-08-14 11:26:30.716 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:26:30.871 +05:30 [ERR] Unhandled Exception: One or more errors occurred. (Object reference not set to an instance of an object.)
+System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.)
+ ---> Common.HttpStatusCodeException: Object reference not set to an instance of an object.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 39
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at ResultGetter(Object)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 11:26:30.876 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 11:28:19.738 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:31:32.421 +05:30 [WRN] Invalid Operation: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.List`1[Models.ResponseModel.BookResponseModel],System.Runtime.CompilerServices.IAsyncStateMachine]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+System.InvalidOperationException: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.List`1[Models.ResponseModel.BookResponseModel],System.Runtime.CompilerServices.IAsyncStateMachine]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_CannotSerializeInvalidType(Type typeToConvert, Type declaringType, MemberInfo memberInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMember(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, NullabilityInfoContext nullabilityCtx, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo, NullabilityInfoContext nullabilityCtx)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateJsonTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CacheEntry.GetResult()
+   at System.Text.Json.JsonSerializerOptions.CachingContext.GetOrAddTypeInfo(Type type, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 11:31:32.429 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 11:32:03.733 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:32:58.433 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:32:58.584 +05:30 [ERR] Unhandled Exception: One or more errors occurred. (Object reference not set to an instance of an object.)
+System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.)
+ ---> Common.HttpStatusCodeException: Object reference not set to an instance of an object.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 39
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at ResultGetter(Object)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 11:32:58.589 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 11:33:26.633 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:39:11.792 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:39:11.946 +05:30 [ERR] Unhandled Exception: One or more errors occurred. (Object reference not set to an instance of an object.)
+System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.)
+ ---> Common.HttpStatusCodeException: Object reference not set to an instance of an object.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 39
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at ResultGetter(Object)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 11:39:11.951 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 11:39:45.797 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:42:20.372 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:44:26.985 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:44:27.126 +05:30 [ERR] Unhandled Exception: One or more errors occurred. (Object reference not set to an instance of an object.)
+System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.)
+ ---> Common.HttpStatusCodeException: Object reference not set to an instance of an object.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 39
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at ResultGetter(Object)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 11:44:27.131 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 11:46:06.495 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:46:26.187 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:51:21.916 +05:30 [INF] ::::In Middleware::::
+2025-08-14 11:51:22.065 +05:30 [ERR] Unhandled Exception: One or more errors occurred. (Object reference not set to an instance of an object.)
+System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.)
+ ---> Common.HttpStatusCodeException: Object reference not set to an instance of an object.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 39
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at ResultGetter(Object)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 11:51:22.070 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 11:52:30.795 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:03:10.816 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:03:34.129 +05:30 [WRN] Invalid Operation: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.List`1[Models.ResponseModel.BookResponseModel],Service.Repository.Implementation.BookRepository+<List>d__5]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+System.InvalidOperationException: The type 'System.Threading.ExecutionContext&' of property 'Context' on type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.List`1[Models.ResponseModel.BookResponseModel],Service.Repository.Implementation.BookRepository+<List>d__5]' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_CannotSerializeInvalidType(Type typeToConvert, Type declaringType, MemberInfo memberInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMember(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, NullabilityInfoContext nullabilityCtx, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, NullabilityInfoContext nullabilityCtx, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo, NullabilityInfoContext nullabilityCtx)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateJsonTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CacheEntry.GetResult()
+   at System.Text.Json.JsonSerializerOptions.CachingContext.GetOrAddTypeInfo(Type type, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 12:03:34.153 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:04:56.088 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:08:21.965 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:09:24.227 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:11:13.045 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:11:14.028 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:11:25.571 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:11:25.642 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:11:39.608 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:11:39.654 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:11:57.439 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:11:57.455 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:27:18.499 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:27:19.478 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:27:36.244 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:27:36.351 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:28:03.639 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:28:03.677 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:29:47.778 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:29:48.791 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:30:05.072 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:30:05.160 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 12:42:47.482 +05:30 [INF] ::::In Middleware::::
+2025-08-14 12:42:48.398 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:02:59.687 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:03:00.237 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:04:39.246 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:04:39.296 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:06:52.015 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:06:52.611 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:08:12.567 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:09:06.063 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:09:47.238 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:12:15.470 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:12:25.409 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:13:19.298 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:28:43.490 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:28:43.693 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:29:11.150 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:29:11.177 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:30:24.017 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:33:32.322 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:33:32.522 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:35:45.173 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:35:45.449 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 13:36:27.154 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:48:45.800 +05:30 [INF] ::::In Middleware::::
+2025-08-14 13:48:46.749 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 14:04:05.117 +05:30 [INF] ::::In Middleware::::
+2025-08-14 14:04:06.131 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 14:04:55.712 +05:30 [INF] ::::In Middleware::::
+2025-08-14 14:04:56.046 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 14:07:36.896 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:28:59.023 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:29:00.025 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 15:29:26.501 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:29:26.783 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 15:31:41.925 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:31:43.083 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 15:32:37.663 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:32:38.691 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 15:34:13.757 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:34:14.649 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 15:34:39.438 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:34:39.669 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 15:53:10.193 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:53:11.117 +05:30 [INF] Fetched 4 books successfully.
+2025-08-14 15:53:11.121 +05:30 [INF] Fetched 4 books successfully.
+2025-08-14 15:53:11.182 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 15:54:36.538 +05:30 [INF] ::::In Middleware::::
+2025-08-14 15:54:36.723 +05:30 [WRN] No book found with SID or Title BSID65d28a85-4aa7-402c-b06c-b58e6e84c851 for deletion.
+2025-08-14 15:54:36.723 +05:30 [WRN] Book with SID BSID65d28a85-4aa7-402c-b06c-b58e6e84c851 not found for deletion.
+2025-08-14 15:54:36.723 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:02:35.051 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:04:34.595 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:06:51.756 +05:30 [ERR] Error while creating book: [{"Title":"grb","Author":"beb","Isbn":"strinetbg","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"grbve","Author":"beberb","Isbn":"strinetbg","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 145
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:06:51.797 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:06:58.777 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:16:34.979 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:16:35.171 +05:30 [WRN] BSIDcbae1f42-da72-447a-b92e-d267489ad3af
+2025-08-14 16:16:35.172 +05:30 [WRN] beb
+2025-08-14 16:16:35.172 +05:30 [WRN] grb
+2025-08-14 16:16:35.172 +05:30 [WRN] strinetbg
+2025-08-14 16:16:35.173 +05:30 [WRN] strinetbg
+2025-08-14 16:16:35.873 +05:30 [ERR] Error while creating book: [{"Title":"grb","Author":"beb","Isbn":"strinetbg","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"grbve","Author":"beberb","Isbn":"strinetbg","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 156
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:16:35.894 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:19:47.752 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:19:47.949 +05:30 [WRN] 0
+2025-08-14 16:19:47.950 +05:30 [WRN] BSIDd6750db3-ae09-430a-8e0a-2325c91410bc
+2025-08-14 16:19:47.950 +05:30 [WRN] beb
+2025-08-14 16:19:47.950 +05:30 [WRN] grb
+2025-08-14 16:19:47.950 +05:30 [WRN] strinetbg
+2025-08-14 16:19:47.950 +05:30 [WRN] 2015
+2025-08-14 16:19:47.950 +05:30 [WRN] 1
+2025-08-14 16:19:47.951 +05:30 [WRN] 8/14/2025 10:49:47 AM
+2025-08-14 16:19:47.951 +05:30 [WRN] 2025-08-14 10:49:47
+2025-08-14 16:19:47.951 +05:30 [WRN] strinetbg
+2025-08-14 16:19:48.638 +05:30 [ERR] Error while creating book: [{"Title":"grb","Author":"beb","Isbn":"strinetbg","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"grbve","Author":"beberb","Isbn":"strinetbg","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 158
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:19:48.660 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:22:36.525 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:22:37.449 +05:30 [ERR] Error while creating book: [{"Title":"grb","Author":"beb","Isbn":"strinetbg","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"grbve","Author":"beberb","Isbn":"strinetbg","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 160
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:22:37.472 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:25:59.476 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:26:00.396 +05:30 [ERR] Error while creating book: [{"Title":"grb","Author":"beb","Isbn":"strinetbg","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"grbve","Author":"beberb","Isbn":"strinetbg","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 160
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:26:00.416 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:27:06.106 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:30:41.133 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:31:54.159 +05:30 [ERR] Error while creating book: [{"Title":"grb","Author":"beb","Isbn":"strinetbg","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"grbve","Author":"beberb","Isbn":"strinetbg","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 161
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:31:56.290 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:32:24.731 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:32:25.654 +05:30 [ERR] Error while creating book: [{"Title":"grb","Author":"beb","Isbn":"strinetbg","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"grbve","Author":"beberb","Isbn":"strinetbg","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 161
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:32:25.674 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:39:43.994 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:41:49.597 +05:30 [INF] Book created successfully with SID:
+2025-08-14 16:41:57.177 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:47:23.842 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:50:51.801 +05:30 [ERR] Error while creating book: [{"Title":"Demo","Author":"Demo","Isbn":"vniobno","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"Demo2","Author":"Demo2","Isbn":"vrwnibowrnwoi","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 161
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:50:51.839 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:51:03.916 +05:30 [INF] ::::In Middleware::::
+2025-08-14 16:51:31.314 +05:30 [ERR] Error while creating book: [{"Title":"Demo","Author":"Demo","Isbn":"vniobno","PublishedYear":2015,"$type":"BookRequestModel"},{"Title":"Demo2","Author":"Demo2","Isbn":"vrwnibowrnwoi","PublishedYear":2016,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 161
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 16:51:31.341 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 16:51:37.447 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:00:05.572 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:01:43.076 +05:30 [INF] Book created successfully with SID:
+2025-08-14 17:03:41.841 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:03:42.770 +05:30 [ERR] Error while creating book: [{"Title":"bwinwb","Author":"dsvniowbnri","Isbn":"sbipwfnbopwrfnb","PublishedYear":2020,"$type":"BookRequestModel"},{"Title":"bwifbnwb","Author":"dsvnidfbowbnri","Isbn":"sbipwfnbopsfbwrfnb","PublishedYear":2021,"$type":"BookRequestModel"}]
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 161
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 90
+2025-08-14 17:03:42.789 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:04:13.555 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:06:20.127 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:10:27.754 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:11:12.705 +05:30 [INF] Book created successfully with SID:
+2025-08-14 17:12:42.046 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:13:13.036 +05:30 [INF] Book created successfully with SID:
+2025-08-14 17:13:44.402 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:34:50.856 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:34:52.250 +05:30 [ERR] Error while creating book: {"Title":null,"Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:34:52.273 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:35:20.130 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:35:20.285 +05:30 [ERR] Error while creating book: {"Title":"","Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:35:20.287 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:41:19.901 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:41:21.253 +05:30 [ERR] Error while creating book: {"Title":"","Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:41:21.278 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:42:26.275 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:42:59.003 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:44:29.533 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:44:30.495 +05:30 [ERR] Unhandled Exception: An error occurred while saving the entity changes. See the inner exception for details.
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 68
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 25
+2025-08-14 17:44:30.507 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:45:05.654 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:45:05.952 +05:30 [INF] Fetched 10 books successfully.
+2025-08-14 17:45:05.974 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:45:28.253 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:45:28.401 +05:30 [ERR] Error while updating book with SID BSID6306fe63-7b5b-4d1e-9d86-8fd5a3c1d78c
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.UpdateAsync(String booksid, BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 187
+   at DemoProject.Controllers.BookController.Update(BookRequestModel book, String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 111
+2025-08-14 17:45:28.401 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:45:48.803 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:45:48.837 +05:30 [ERR] Error while updating book with SID BSID6306fe63-7b5b-4d1e-9d86-8fd5a3c1d78c
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.UpdateAsync(String booksid, BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 187
+   at DemoProject.Controllers.BookController.Update(BookRequestModel book, String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 111
+2025-08-14 17:45:48.839 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:45:59.518 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:45:59.538 +05:30 [ERR] Error while updating book with SID BSID6306fe63-7b5b-4d1e-9d86-8fd5a3c1d78c
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.UpdateAsync(String booksid, BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 187
+   at DemoProject.Controllers.BookController.Update(BookRequestModel book, String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 111
+2025-08-14 17:45:59.539 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:46:06.202 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:46:06.224 +05:30 [ERR] Error while updating book with SID BSID6306fe63-7b5b-4d1e-9d86-8fd5a3c1d78c
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.UpdateAsync(String booksid, BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 187
+   at DemoProject.Controllers.BookController.Update(BookRequestModel book, String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 111
+2025-08-14 17:46:06.226 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:46:37.549 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:46:37.584 +05:30 [ERR] Error while updating book with SID BSID6306fe63-7b5b-4d1e-9d86-8fd5a3c1d78c
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.UpdateAsync(String booksid, BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 187
+   at DemoProject.Controllers.BookController.Update(BookRequestModel book, String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 111
+2025-08-14 17:46:37.585 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:47:35.515 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:47:35.558 +05:30 [INF] Book with SID BSID6306fe63-7b5b-4d1e-9d86-8fd5a3c1d78c updated successfully.
+2025-08-14 17:47:35.566 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:47:39.954 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:47:39.999 +05:30 [INF] Fetched 10 books successfully.
+2025-08-14 17:47:40.000 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:50:51.916 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:50:52.827 +05:30 [ERR] Error while creating book: {"Title":"","Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:50:52.845 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:53:13.362 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:53:14.345 +05:30 [ERR] Error while creating book: {"Title":"","Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:53:14.364 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:54:19.637 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:54:20.583 +05:30 [ERR] Error while creating book: {"Title":"","Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:54:20.601 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:55:56.864 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:55:57.758 +05:30 [ERR] Error while creating book: {"Title":"","Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:55:57.780 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 17:56:41.800 +05:30 [INF] ::::In Middleware::::
+2025-08-14 17:56:42.697 +05:30 [ERR] Error while creating book: {"Title":"","Author":"string","Isbn":"string","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 17:56:42.714 +05:30 [INF] ::::::End of Middleware::::
