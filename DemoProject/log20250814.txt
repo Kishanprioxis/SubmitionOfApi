@@ -449,3 +449,57 @@ Common.HttpStatusCodeException: An error occurred while saving the entity change
    at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
    at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
 2025-08-14 17:56:42.714 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:17:18.995 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:17:19.917 +05:30 [INF] Fetched 0 books successfully.
+2025-08-14 18:17:19.975 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:22:46.611 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:22:46.770 +05:30 [ERR] Error while fetching all books.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 49
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+2025-08-14 18:22:46.774 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:24:49.584 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:24:50.552 +05:30 [INF] Fetched 10 books successfully.
+2025-08-14 18:24:50.613 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:25:40.701 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:25:40.776 +05:30 [INF] Fetched 5 books successfully.
+2025-08-14 18:25:40.777 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:26:02.935 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:26:02.979 +05:30 [INF] Fetched 10 books successfully.
+2025-08-14 18:26:02.979 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:26:15.895 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:26:15.914 +05:30 [INF] Fetched 5 books successfully.
+2025-08-14 18:26:15.915 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:26:30.404 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:26:30.427 +05:30 [INF] Fetched 5 books successfully.
+2025-08-14 18:26:30.427 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:26:49.359 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:26:49.371 +05:30 [INF] Fetched 1 books successfully.
+2025-08-14 18:26:49.372 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:27:05.153 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:27:05.183 +05:30 [INF] Fetched 5 books successfully.
+2025-08-14 18:27:05.184 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:27:32.188 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:27:32.230 +05:30 [INF] Fetched book with SID BSIDcc4c8cae-bae5-4eb4-8eca-386623ed68b1 successfully.
+2025-08-14 18:27:32.231 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:32:21.864 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:32:22.134 +05:30 [WRN] Book with SID BSIDba4086-58ec-4b0e-ac11-1331bcb93840 not found for update.
+2025-08-14 18:32:22.135 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:33:49.108 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:33:50.069 +05:30 [ERR] Error while updating book with SID BSIDba4086-58ec-4b0e-ac11-1331bcb93840
+Common.HttpStatusCodeException: Book not found
+   at Service.Repository.Implementation.BookRepository.UpdateAsync(String booksid, BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 187
+   at DemoProject.Controllers.BookController.Update(BookRequestModel book, String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 112
+2025-08-14 18:33:50.084 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:38:36.421 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:38:37.423 +05:30 [ERR] Error while updating book with SID BSIDba4086-58ec-4b0e-ac11-1331bcb93840
+Common.HttpStatusCodeException: Book not found
+   at Service.Repository.Implementation.BookRepository.UpdateAsync(String booksid, BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 189
+   at DemoProject.Controllers.BookController.Update(BookRequestModel book, String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 112
+2025-08-14 18:38:37.437 +05:30 [INF] ::::::End of Middleware::::
+2025-08-14 18:40:04.042 +05:30 [INF] ::::In Middleware::::
+2025-08-14 18:40:04.263 +05:30 [ERR] Error while creating book: {"Title":"string","Author":"string","Isbn":"1234567890987","PublishedYear":0,"$type":"BookRequestModel"}
+Common.HttpStatusCodeException: An error occurred while saving the entity changes. See the inner exception for details.
+   at Service.Repository.Implementation.BookRepository.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 103
+   at DemoProject.Controllers.BookController.CreateAsync(BookRequestModel book) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+2025-08-14 18:40:04.271 +05:30 [INF] ::::::End of Middleware::::

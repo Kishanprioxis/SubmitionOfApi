@@ -169,7 +169,9 @@ public class BookRepository : IBookRepository
                 .SingleOrDefaultAsync(x => x.BookSid == booksid);
             if (b == null)
             {
-                return false;
+
+                throw new HttpStatusCodeException(400, "Book not found");
+                throw new Exception("Book not found");
             }
 
             b.Title = book.Title;
@@ -181,10 +183,14 @@ public class BookRepository : IBookRepository
             await _unitOfWork.CommitAsync();
             return true;
         }
+        catch (HttpStatusCodeException ex)
+        {
+            throw new HttpStatusCodeException(400, "Book not found");
+        }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in UpdateAsync: {ex.Message}");
-            throw new HttpStatusCodeException(500, ex.Message);
+            throw new HttpStatusCodeException(400, "Bad request");
+            
         }
     }
 
@@ -193,20 +199,27 @@ public class BookRepository : IBookRepository
         try
         {
             var b = await _unitOfWork.GetRepository<Book>()
-                .SingleOrDefaultAsync( x =>(x.IsAvailable !=(int) StatusEnum.Deleted) &&x.BookSid == booksid || x.Title == booksid);
+                .SingleOrDefaultAsync(x =>
+                    (x.IsAvailable != (int)StatusEnum.Deleted) && x.BookSid == booksid || x.Title == booksid);
             if (b == null)
             {
+                throw new HttpStatusCodeException(400, "Book not found");
                 return false;
             }
+
             b.IsAvailable = (int)StatusEnum.Deleted;
             _unitOfWork.GetRepository<Book>().Update(b);
             await _unitOfWork.CommitAsync();
             return true;
         }
-        catch (Exception ex)
+        catch (HttpStatusCodeException ex)
         {
             Console.WriteLine($"Error in DeleteAsync: {ex.Message}");
-            throw new HttpStatusCodeException(500, ex.Message);
+            throw new HttpStatusCodeException(400, ex.Message);
+        }
+        catch (Exception ex)
+        {
+            throw new HttpStatusCodeException(400, "Internal server error");
         }
     }
 }
