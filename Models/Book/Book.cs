@@ -39,4 +39,6 @@ public partial class Book
 
     [Column(TypeName = "datetime")]
     public DateTime? UpdatedAt { get; set; }
+
+    public int Status { get; set; }
 }

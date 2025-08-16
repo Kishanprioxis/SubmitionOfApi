@@ -21,6 +21,7 @@ public partial class BookDbContext : DbContext
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsAvailable).HasDefaultValue(1);
+            entity.Property(e => e.Status).HasDefaultValue(1);
             entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(getdate())");
         });
 

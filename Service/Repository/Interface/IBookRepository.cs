@@ -12,5 +12,6 @@ public interface IBookRepository
     Task<bool> DeleteAsync(string booksid);
 
     Task<List<BookResponseModel>> CreateAsyncMul(List<BookRequestModel> books);
+    Task<bool> UpdateStatus(string booksid,string isbn,int status);
     //Task<List<BookResponseModel>> CreateAsync(List<BookRequestModel> book);
 }

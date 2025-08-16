@@ -1,3 +1,4 @@
+using Common;
 using Microsoft.AspNetCore.Mvc;
 using Models.CommonModel;
 using Models.RequestModel;
@@ -103,5 +104,30 @@ namespace DemoProject.Controllers
             Log.Information("Book with SID {BookSID} deleted successfully.", BookSID);
             return NoContent();
         }
+
+        [HttpPost("UpdateStatusBorrowed")]
+        public async Task<IActionResult> UpdateStatusBorrowed([FromQuery] string BookSID, [FromQuery] string isbn)
+        {
+            var success = await _bookRepository.UpdateStatus(BookSID, isbn, (int)StatusEnum.Borrowed);
+            if (!success)
+            {
+                Log.Warning("Book with SID {BookSID} not found for update.", BookSID);
+                return NotFound();
+            }
+            Log.Information("Book with SID {BookSID} updated successfully.", BookSID);
+            return NoContent();
+        }   
+        [HttpPost("UpdateStatusReturned")]
+        public async Task<IActionResult> UpdateStatusReturned([FromQuery] string BookSID, [FromQuery] string isbn)
+        {
+            var success = await _bookRepository.UpdateStatus(BookSID, isbn, (int)StatusEnum.Returned);
+            if (!success)
+            {
+                Log.Warning("Book with SID {BookSID} not found for update.", BookSID);
+                return NotFound();
+            }
+            Log.Information("Book with SID {BookSID} updated successfully.", BookSID);
+            return NoContent();
+        }   
     }
 }

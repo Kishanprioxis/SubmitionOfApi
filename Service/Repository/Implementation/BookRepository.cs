@@ -26,27 +26,29 @@ public class BookRepository : IBookRepository
         _spContext = spContext;
         _unitOfWork = unitOfWork;
     }
+
     public async Task<List<BookResponseModel>> List(Dictionary<string, object> parameters)
     {
         try
         {
+            Log.Information("Fetching books with parameters: {@Parameters}", parameters);
+
             var xmlParams = Common.CommonHelper.DictionaryToXml(parameters, "Search");
             string query = "sp_DynamicGetAllBooks {0}";
             object[] param = { xmlParams };
+
             var res = await _spContext.ExecutreStoreProcedureResultList(query, param);
             List<BookResponseModel> list =
                 JsonConvert.DeserializeObject<List<BookResponseModel>>(res.Result?.ToString() ?? "[]") ?? [];
-            if (list != null)
-            {
-                return list;
-            }
-            return new List<BookResponseModel>();  
+
+            Log.Information("Fetched {Count} books from DB.", list?.Count ?? 0);
+
+            return list ?? new List<BookResponseModel>();
         }
-        
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in List: {ex.Message}");
-            throw new HttpStatusCodeException(500,ex.Message);    
+            Log.Error(ex, "Error in List method.");
+            throw new HttpStatusCodeException(500, ex.Message);
         }
     }
 
@@ -54,18 +56,30 @@ public class BookRepository : IBookRepository
     {
         try
         {
+            Log.Information("Fetching book by SID: {BookSid}", bookSid);
             string query = "sp_getBookBySid {0}";
             object[] param = { bookSid };
             var student = await _spContext.ExecuteStoreProcedure(query, param);
-            BookResponseModel book = Newtonsoft.Json.JsonConvert.DeserializeObject<BookResponseModel>(student?.ToString() ?? "{}");
-            if (book != null)
+            BookResponseModel book = JsonConvert.DeserializeObject<BookResponseModel>(student?.ToString() ?? "{}");
+
+            if (book == null)
             {
-                return book;
+                Log.Warning("No book found with SID: {BookSid}", bookSid);
+                throw new HttpStatusCodeException(400, "No book found with SID: {BookSid}");
+                return new BookResponseModel();
             }
-            return new BookResponseModel();
-        }catch(Exception ex)
+
+            Log.Information("Book found: {@Book}", book);
+            return book;
+        }
+        catch (HttpStatusCodeException ex)
         {
-            Console.WriteLine($"Error in GetBookBySid: {ex.Message}");
+            Log.Warning("No book found with SID: {BookSid}", bookSid);
+            throw new HttpStatusCodeException(400, "No book found with SID: {BookSid}");
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error in GetBookBySid for SID {BookSid}", bookSid);
             throw new HttpStatusCodeException(500, ex.Message);
         }
     }
@@ -74,104 +88,105 @@ public class BookRepository : IBookRepository
     {
         try
         {
-            Book b = new Book();
-            b.BookSid = "BSID" + Guid.NewGuid().ToString();
-            b.Author =  book.Author;
-            b.Title = book.Title;
-            b.Isbn =  book.Isbn;
-            b.PublishedYear = book.PublishedYear;
-            b.CreatedAt = DateTime.UtcNow;
-            b.UpdatedAt = DateTime.UtcNow;
-            b.IsAvailable = (int)StatusEnum.Active;
+            Log.Information("Creating new book: {@Book}", book);
+
+            Book b = new Book
+            {
+                BookSid = "BSID" + Guid.NewGuid().ToString(),
+                Author = book.Author,
+                Title = book.Title,
+                Isbn = book.Isbn,
+                PublishedYear = book.PublishedYear,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsAvailable = (int)StatusEnum.Active
+            };
+
             await _unitOfWork.GetRepository<Book>().InsertAsync(b);
             await _unitOfWork.CommitAsync();
-            BookResponseModel bookres = new BookResponseModel();
-            bookres.BookSid = b.BookSid;
-            bookres.Author = b.Author;
-            bookres.Title = b.Title;
-            bookres.Isbn = book.Isbn;
-            bookres.PublishedYear = b.PublishedYear;
-            bookres.CreatedAt = b.CreatedAt;
-            bookres.UpdatedAt = b.UpdatedAt;
-            bookres.IsAvailable = b.IsAvailable;
-            return bookres;
 
+            var bookres = new BookResponseModel
+            {
+                BookSid = b.BookSid,
+                Author = b.Author,
+                Title = b.Title,
+                Isbn = b.Isbn,
+                PublishedYear = b.PublishedYear,
+                CreatedAt = b.CreatedAt,
+                UpdatedAt = b.UpdatedAt,
+                IsAvailable = b.IsAvailable
+            };
+
+            Log.Information("Book created successfully with SID: {BookSid}", b.BookSid);
+            return bookres;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in CreateAsync: {ex.Message}");
+            Log.Error(ex, "Error while creating book: {@Book}", book);
             throw new HttpStatusCodeException(500, ex.Message);
         }
     }
 
-    public async  Task<List<BookResponseModel>> CreateAsyncMul(List<BookRequestModel> books)
+    public async Task<List<BookResponseModel>> CreateAsyncMul(List<BookRequestModel> books)
     {
         try
         {
-            List<Book> bookList = new List<Book>();
+            Log.Information("Creating multiple books. Count: {Count}", books.Count);
+
+            List<Book> bookList = new();
             foreach (BookRequestModel book in books)
             {
-                Book b = new Book();
-                b.BookSid = "BSID" + Guid.NewGuid().ToString();
-                b.Author = book.Author;
-                b.Title = book.Title;
-                b.PublishedYear = book.PublishedYear;
-                b.Isbn = book.Isbn;
-                b.IsAvailable = (int)StatusEnum.Active;
-                b.CreatedAt = DateTime.UtcNow;
-                b.UpdatedAt = DateTime.UtcNow;
-                Console.WriteLine("===============================");
-                Console.WriteLine(b.BookSid);
-                Console.WriteLine(b.Author);
-                Console.WriteLine(b.Title);
-                Console.WriteLine(b.Isbn);
-                Console.WriteLine(b.PublishedYear);
-                Console.WriteLine(b.IsAvailable);
-                Console.WriteLine(b.CreatedAt);
-                Console.WriteLine(b.UpdatedAt);
-                Console.WriteLine(b.Isbn);
-                Console.WriteLine("===============================");
-
+                Book b = new Book
+                {
+                    BookSid = "BSID" + Guid.NewGuid().ToString(),
+                    Author = book.Author,
+                    Title = book.Title,
+                    PublishedYear = book.PublishedYear,
+                    Isbn = book.Isbn,
+                    IsAvailable = (int)StatusEnum.Active,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                };
                 bookList.Add(b);
-                
             }
+
             await _unitOfWork.GetRepository<Book>().InsertAsync(bookList);
             await _unitOfWork.CommitAsync();
-            
-            List<BookResponseModel> resBooks = new List<BookResponseModel>();
-            foreach (Book b in bookList)
+
+            List<BookResponseModel> resBooks = bookList.Select(b => new BookResponseModel
             {
-                BookResponseModel resBook = new BookResponseModel();
-                resBook.BookSid = b.BookSid;
-                resBook.Author = b.Author;
-                resBook.Title = b.Title;
-                resBook.PublishedYear = b.PublishedYear;
-                resBook.Isbn = b.Isbn;
-                resBook.IsAvailable = b.IsAvailable;
-                resBook.CreatedAt = b.CreatedAt;
-                resBook.UpdatedAt = b.UpdatedAt;
-                resBooks.Add(resBook);
-            }
-    
+                BookSid = b.BookSid,
+                Author = b.Author,
+                Title = b.Title,
+                PublishedYear = b.PublishedYear,
+                Isbn = b.Isbn,
+                IsAvailable = b.IsAvailable,
+                CreatedAt = b.CreatedAt,
+                UpdatedAt = b.UpdatedAt
+            }).ToList();
+
+            Log.Information("Successfully created {Count} books.", resBooks.Count);
             return resBooks;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in CreateAsync: {ex.Message}");
+            Log.Error(ex, "Error while creating multiple books.");
             throw new HttpStatusCodeException(500, ex.Message);
         }
     }
-    public async Task<bool> UpdateAsync(string booksid,BookRequestModel book)
+
+    public async Task<bool> UpdateAsync(string booksid, BookRequestModel book)
     {
         try
         {
+            Log.Information("Updating book with SID: {BookSid}", booksid);
+
             var b = await _unitOfWork.GetRepository<Book>()
                 .SingleOrDefaultAsync(x => x.BookSid == booksid);
             if (b == null)
             {
-
+                Log.Warning("Book not found with SID: {BookSid}", booksid);
                 throw new HttpStatusCodeException(400, "Book not found");
-                throw new Exception("Book not found");
             }
 
             b.Title = book.Title;
@@ -179,7 +194,75 @@ public class BookRepository : IBookRepository
             b.Author = book.Author;
             b.Isbn = book.Isbn;
             b.PublishedYear = book.PublishedYear;
+
             _unitOfWork.GetRepository<Book>().Update(b);
+            await _unitOfWork.CommitAsync();
+
+            Log.Information("Book with SID {BookSid} updated successfully.", booksid);
+            return true;
+        }
+        catch (HttpStatusCodeException ex)
+        {
+            Log.Warning("Update failed. Book not found with SID: {BookSid}", booksid);
+            throw;
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error while updating book with SID: {BookSid}", booksid);
+            throw new HttpStatusCodeException(400, "Bad request");
+        }
+    }
+
+    public async Task<bool> DeleteAsync(string booksid)
+    {
+        try
+        {
+            Log.Information("Deleting book with SID or Title: {BookSid}", booksid);
+
+            var b = await _unitOfWork.GetRepository<Book>()
+                .SingleOrDefaultAsync(x =>
+                    (x.Status != (int)StatusEnum.Deleted) && (x.BookSid == booksid || x.Title == booksid));
+
+            if (b == null)
+            {
+                Log.Warning("Book not found for deletion. SID/Title: {BookSid}", booksid);
+                throw new HttpStatusCodeException(400, "Book not found");
+            }
+
+            b.Status = (int)StatusEnum.Deleted;
+            _unitOfWork.GetRepository<Book>().Update(b);
+            await _unitOfWork.CommitAsync();
+
+            Log.Information("Book with SID {BookSid} marked as deleted.", booksid);
+            return true;
+        }
+        catch (HttpStatusCodeException ex)
+        {
+            Log.Warning("Delete failed for book {BookSid}. Reason: {Message}", booksid, ex.Message);
+            throw;
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Internal error while deleting book with SID: {BookSid}", booksid);
+            throw new HttpStatusCodeException(500, "Internal server error");
+        }
+    }
+
+    public async Task<bool> UpdateStatus(string booksid, string isbn,int status)
+    {
+        try
+        {
+            var book = await _unitOfWork.GetRepository<Book>()
+                .SingleOrDefaultAsync(x =>
+                    (x.IsAvailable != (int)StatusEnum.Deleted) && (x.BookSid == booksid && x.Isbn == isbn) && (x.IsAvailable!=status));
+            if (book == null)
+            {
+                Log.Warning("Book not found with SID: {BookSid}", booksid);
+                throw new HttpStatusCodeException(400, "Book not found");
+            }
+
+            book.IsAvailable = status;
+            _unitOfWork.GetRepository<Book>().Update(book);
             await _unitOfWork.CommitAsync();
             return true;
         }
@@ -189,37 +272,7 @@ public class BookRepository : IBookRepository
         }
         catch (Exception ex)
         {
-            throw new HttpStatusCodeException(400, "Bad request");
-            
-        }
-    }
-
-    public async Task<bool> DeleteAsync(string booksid)
-    {
-        try
-        {
-            var b = await _unitOfWork.GetRepository<Book>()
-                .SingleOrDefaultAsync(x =>
-                    (x.IsAvailable != (int)StatusEnum.Deleted) && x.BookSid == booksid || x.Title == booksid);
-            if (b == null)
-            {
-                throw new HttpStatusCodeException(400, "Book not found");
-                return false;
-            }
-
-            b.IsAvailable = (int)StatusEnum.Deleted;
-            _unitOfWork.GetRepository<Book>().Update(b);
-            await _unitOfWork.CommitAsync();
-            return true;
-        }
-        catch (HttpStatusCodeException ex)
-        {
-            Console.WriteLine($"Error in DeleteAsync: {ex.Message}");
-            throw new HttpStatusCodeException(400, ex.Message);
-        }
-        catch (Exception ex)
-        {
-            throw new HttpStatusCodeException(400, "Internal server error");
+            throw new HttpStatusCodeException(500, "Internal server error");
         }
     }
 }
