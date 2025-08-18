@@ -42,7 +42,7 @@ public class BookRepository : IBookRepository
                 JsonConvert.DeserializeObject<List<BookResponseModel>>(res.Result?.ToString() ?? "[]") ?? [];
             if (list == null && list?.Count() == 0)
             {
-                throw new HttpStatusCodeException(400, "No books found");
+                throw new HttpStatusCodeException((int)StatusCode.BadRequest, "No books found");
             }
 
             Log.Information("Fetched {Count} books from DB.", list?.Count ?? 0);
@@ -57,7 +57,7 @@ public class BookRepository : IBookRepository
         catch (Exception ex)
         {
             Log.Error(ex, "Error in List method.");
-            throw new HttpStatusCodeException(500, ex.Message);
+            throw new HttpStatusCodeException((int)StatusCode.InternalServerError, ex.Message);
         }
     }
 
@@ -74,7 +74,7 @@ public class BookRepository : IBookRepository
             if (book == null)
             {
                 Log.Warning("No book found with SID: {BookSid}", bookSid);
-                throw new HttpStatusCodeException(400, "No book found with SID: {BookSid}");
+                throw new HttpStatusCodeException((int)StatusCode.Forbidden, "No book found with SID: {BookSid}");
                 return new BookResponseModel();
             }
 
@@ -84,12 +84,12 @@ public class BookRepository : IBookRepository
         catch (HttpStatusCodeException ex)
         {
             Log.Warning("No book found with SID: {BookSid}", bookSid);
-            throw new HttpStatusCodeException(400, "No book found with SID: {BookSid}");
+            throw new HttpStatusCodeException((int)StatusCode.Forbidden, "No book found with SID: {BookSid}");
         }
         catch (Exception ex)
         {
             Log.Error(ex, "Error in GetBookBySid for SID {BookSid}", bookSid);
-            throw new HttpStatusCodeException(500, ex.Message);
+            throw new HttpStatusCodeException((int)StatusCode.InternalServerError, ex.Message);
         }
     }
 
@@ -132,7 +132,7 @@ public class BookRepository : IBookRepository
         catch (Exception ex)
         {
             Log.Error(ex, "Error while creating book: {@Book}", book);
-            throw new HttpStatusCodeException(500, ex.Message);
+            throw new HttpStatusCodeException((int)StatusCode.InternalServerError, ex.Message);
         }
     }
 
@@ -161,7 +161,7 @@ public class BookRepository : IBookRepository
 
             if (bookList.Count == 0)
             {
-                throw new HttpStatusCodeException(400, "Cannot Add books");
+                throw new HttpStatusCodeException((int)StatusCode.Forbidden, "Cannot Add books");
             }
 
             await _unitOfWork.GetRepository<Book>().InsertAsync(bookList);
@@ -190,7 +190,7 @@ public class BookRepository : IBookRepository
         catch (Exception ex)
         {
             Log.Error(ex, "Error while creating multiple books.");
-            throw new HttpStatusCodeException(500, ex.Message);
+            throw new HttpStatusCodeException((int)StatusCode.InternalServerError, ex.Message);
         }
     }
 
@@ -205,7 +205,7 @@ public class BookRepository : IBookRepository
             if (b == null)
             {
                 Log.Warning("Book not found with SID: {BookSid}", booksid);
-                throw new HttpStatusCodeException(400, "Book not found");
+                throw new HttpStatusCodeException((int)StatusCode.Forbidden, "Book not found");
             }
 
             b.Title = book.Title;
@@ -228,7 +228,7 @@ public class BookRepository : IBookRepository
         catch (Exception ex)
         {
             Log.Error(ex, "Error while updating book with SID: {BookSid}", booksid);
-            throw new HttpStatusCodeException(400, "Bad request");
+            throw new HttpStatusCodeException((int)StatusCode.Forbidden, "Bad request");
         }
     }
 
@@ -245,7 +245,7 @@ public class BookRepository : IBookRepository
             if (b == null)
             {
                 Log.Warning("Book not found for deletion. SID/Title: {BookSid}", booksid);
-                throw new HttpStatusCodeException(400, "Book not found");
+                throw new HttpStatusCodeException((int)StatusCode.Forbidden, "Book not found");
             }
 
             b.Status = (int)StatusEnum.Deleted;
@@ -263,7 +263,7 @@ public class BookRepository : IBookRepository
         catch (Exception ex)
         {
             Log.Error(ex, "Internal error while deleting book with SID: {BookSid}", booksid);
-            throw new HttpStatusCodeException(500, "Internal server error");
+            throw new HttpStatusCodeException((int)StatusCode.InternalServerError, "Internal server error");
         }
     }
 
@@ -277,7 +277,7 @@ public class BookRepository : IBookRepository
             if (book == null)
             {
                 Log.Warning("Book not found with SID: {BookSid}", booksid);
-                throw new HttpStatusCodeException(400, "Book not found");
+                throw new HttpStatusCodeException((int)StatusCode.Forbidden, "Book not found");
             }
 
             book.IsAvailable = status;
@@ -287,11 +287,11 @@ public class BookRepository : IBookRepository
         }
         catch (HttpStatusCodeException ex)
         {
-            throw new HttpStatusCodeException(400, "Book not found");
+            throw new HttpStatusCodeException((int)StatusCode.Forbidden, "Book not found");
         }
         catch (Exception ex)
         {
-            throw new HttpStatusCodeException(500, "Internal server error");
+            throw new HttpStatusCodeException((int)StatusCode.InternalServerError, "Internal server error");
         }
     }
 }

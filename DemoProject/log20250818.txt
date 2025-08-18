@@ -524,3 +524,17 @@ Common.HttpStatusCodeException: No book found with SID: {BookSid}
 2025-08-18 14:35:05.579 +05:30 [INF] Fetched 1 books from DB.
 2025-08-18 14:35:05.579 +05:30 [INF] Fetched 1 books successfully.
 2025-08-18 14:35:05.594 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:53:16.394 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:54:05.647 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:54:16.596 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:54:19.129 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZA' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:58:32.742 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:59:35.799 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 15:00:24.172 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 15:00:28.019 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 15:00:29.934 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 15:01:53.109 +05:30 [INF] ::::In Middleware::::
+2025-08-18 15:01:53.353 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZA' ) AND","Page":1,"PageSize":10}
+2025-08-18 15:01:54.101 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 15:01:54.101 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 15:01:54.162 +05:30 [INF] ::::::End of Middleware::::
