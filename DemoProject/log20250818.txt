@@ -1,0 +1,470 @@
+2025-08-18 10:21:55.806 +05:30 [INF] ::::In Middleware::::
+2025-08-18 10:21:56.710 +05:30 [WRN] Custom HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 49
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 10:21:56.770 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 10:22:45.879 +05:30 [INF] ::::In Middleware::::
+2025-08-18 10:22:46.829 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 10:22:46.900 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 10:27:11.602 +05:30 [INF] ::::In Middleware::::
+2025-08-18 10:27:11.750 +05:30 [WRN] Custom HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 49
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 10:27:11.764 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 10:27:38.223 +05:30 [INF] ::::In Middleware::::
+2025-08-18 10:27:38.314 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 10:27:38.315 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 10:28:19.768 +05:30 [INF] ::::In Middleware::::
+2025-08-18 10:28:19.828 +05:30 [INF] Fetched 15 books successfully.
+2025-08-18 10:28:19.830 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 10:28:38.951 +05:30 [INF] ::::In Middleware::::
+2025-08-18 10:28:38.970 +05:30 [WRN] No books found for search: {"SearchText":null,"Page":2,"PageSize":15,"SortColumn":null,"SortOrder":null,"Filters":null,"$type":"SearchRequestModel"}
+2025-08-18 10:28:39.015 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 10:54:05.096 +05:30 [INF] ::::In Middleware::::
+2025-08-18 10:54:05.205 +05:30 [WRN] Custom HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 49
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 10:54:05.216 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 10:56:16.081 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:04:34.919 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:04:35.902 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 11:04:35.964 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:06:33.817 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:06:33.916 +05:30 [WRN] Custom HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 49
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 11:06:33.925 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:07:01.995 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:10:45.131 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:11:40.622 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:12:00.770 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 11:12:00.857 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:12:39.824 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:12:40.750 +05:30 [WRN] Custom HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 49
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 11:12:40.809 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:12:47.138 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:12:47.260 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 11:12:47.285 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:13:36.776 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:13:36.855 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 11:13:36.856 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:15:14.338 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:15:14.368 +05:30 [INF] Fetched 3 books successfully.
+2025-08-18 11:15:14.368 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:15:27.100 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:15:27.121 +05:30 [INF] Fetched 3 books successfully.
+2025-08-18 11:15:27.122 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:15:52.813 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:15:52.964 +05:30 [WRN] Custom HttpStatusCodeException: Book not found
+Common.HttpStatusCodeException: Book not found
+   at Service.Repository.Implementation.BookRepository.DeleteAsync(String booksid) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 218
+   at DemoProject.Controllers.BookController.Delete(String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 96
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 11:15:52.966 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:16:07.235 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:16:07.322 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:22:08.264 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:22:08.454 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"","Page":1,"PageSize":10}
+2025-08-18 11:22:09.221 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 11:22:09.222 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 11:22:09.282 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:25:24.946 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:25:24.966 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 )  ( BookSID = 'BSIDcc4c8cae-bae5-4eb4-8eca-386623ed68b1' )","Page":1,"PageSize":10}
+2025-08-18 11:25:25.059 +05:30 [ERR] Error in List method.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.BufferedDataRecord.ReadInt(DbDataReader reader, Int32 ordinal, ReaderColumn column)
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.BufferedDataRecord.ReadRow()
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.BufferedDataRecord.InitializeAsync(DbDataReader reader, IReadOnlyList`1 columns, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.InitializeAsync(IReadOnlyList`1 columns, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.InitializeAsync(IReadOnlyList`1 columns, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Service.RepositoryFactory.SpRepository.ExecutreStoreProcedureResultList(LibraryManagementSpContext catalogDbContext, String sqlQuery, Object[] param) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/RepositoryFactory/SpRepository.cs:line 152
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 40
+2025-08-18 11:25:25.067 +05:30 [WRN] Custom HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 51
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 11:25:25.076 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:26:28.762 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:27:00.833 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:27:07.903 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"","Page":1,"PageSize":10}
+2025-08-18 11:46:27.084 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:46:27.252 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"","Page":1,"PageSize":10}
+2025-08-18 11:46:28.101 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 11:46:28.101 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 11:46:28.163 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:46:58.720 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:46:58.742 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 )  ( BookSID = 'BSIDcc4c8cae-bae5-4eb4-8eca-386623ed68b1' )","Page":1,"PageSize":10}
+2025-08-18 11:46:58.800 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 11:46:58.800 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 11:46:58.801 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:47:45.767 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:47:45.778 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 )  ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' )","Page":1,"PageSize":10}
+2025-08-18 11:47:45.815 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 11:47:45.815 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 11:47:45.816 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 11:48:10.476 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:48:43.314 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:48:53.598 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 )  ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' )","Page":1,"PageSize":10}
+2025-08-18 11:58:44.128 +05:30 [INF] ::::In Middleware::::
+2025-08-18 11:58:52.093 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 )  ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' )","Page":1,"PageSize":10}
+2025-08-18 12:00:01.491 +05:30 [ERR] Error in List method.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method24(Closure, DbDataReader, Int32[])
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.BufferedDataRecord.ReadInt(DbDataReader reader, Int32 ordinal, ReaderColumn column)
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.BufferedDataRecord.ReadRow()
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.BufferedDataRecord.InitializeAsync(DbDataReader reader, IReadOnlyList`1 columns, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.InitializeAsync(IReadOnlyList`1 columns, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.BufferedDataReader.InitializeAsync(IReadOnlyList`1 columns, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Service.RepositoryFactory.SpRepository.ExecutreStoreProcedureResultList(LibraryManagementSpContext catalogDbContext, String sqlQuery, Object[] param) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/RepositoryFactory/SpRepository.cs:line 152
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 40
+2025-08-18 12:00:01.948 +05:30 [WRN] Custom HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+Common.HttpStatusCodeException: Data is Null. This method or property cannot be called on Null values.
+   at Service.Repository.Implementation.BookRepository.List(Dictionary`2 parameters) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 51
+   at DemoProject.Controllers.BookController.GetAllBooks(SearchRequestModel searchRequestModel) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 25
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 12:00:02.009 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 12:01:09.298 +05:30 [INF] ::::In Middleware::::
+2025-08-18 12:01:17.294 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 12:03:41.830 +05:30 [INF] ::::In Middleware::::
+2025-08-18 12:03:50.877 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 12:05:08.922 +05:30 [INF] ::::In Middleware::::
+2025-08-18 12:05:15.127 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 )  ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' )","Page":1,"PageSize":10}
+2025-08-18 12:22:33.279 +05:30 [INF] ::::In Middleware::::
+2025-08-18 12:22:41.009 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 12:29:35.002 +05:30 [INF] ::::In Middleware::::
+2025-08-18 12:29:38.634 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 12:29:43.411 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 12:29:45.476 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 12:29:48.279 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 12:30:28.205 +05:30 [INF] ::::In Middleware::::
+2025-08-18 12:30:31.590 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND","Page":1,"PageSize":10}
+2025-08-18 12:30:33.477 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 12:30:33.879 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 12:30:33.880 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:05:31.827 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:05:47.723 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:05:47.888 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"1 = 1 AND","Page":1,"PageSize":10}
+2025-08-18 13:05:48.712 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 13:05:48.713 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 13:05:48.774 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:06:26.510 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:06:26.526 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"1 = 1 AND","Page":1,"PageSize":30}
+2025-08-18 13:06:26.595 +05:30 [INF] Fetched 15 books from DB.
+2025-08-18 13:06:26.595 +05:30 [INF] Fetched 15 books successfully.
+2025-08-18 13:06:26.596 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:07:27.585 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:07:27.928 +05:30 [INF] Book with SID BSID-9751912C-3631-4353-9AD9-09550D44DFA7 updated successfully.
+2025-08-18 13:07:27.929 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:07:36.366 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:07:36.379 +05:30 [WRN] Book not found with SID: BSID-9751912C-3631-4353-9AD9-09550D44DFA7
+2025-08-18 13:07:36.386 +05:30 [WRN] Custom HttpStatusCodeException: Book not found
+Common.HttpStatusCodeException: Book not found
+   at Service.Repository.Implementation.BookRepository.UpdateStatus(String booksid, String isbn, Int32 status) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 266
+   at DemoProject.Controllers.BookController.UpdateStatusBorrowed(String BookSID, String isbn) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 111
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 13:07:36.418 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:07:46.690 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:07:46.701 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"1 = 1 AND","Page":1,"PageSize":30}
+2025-08-18 13:07:46.721 +05:30 [INF] Fetched 15 books from DB.
+2025-08-18 13:07:46.721 +05:30 [INF] Fetched 15 books successfully.
+2025-08-18 13:07:46.722 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:08:35.015 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:08:35.047 +05:30 [INF] Book with SID BSID-9751912C-3631-4353-9AD9-09550D44DFA7 updated successfully.
+2025-08-18 13:08:35.047 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:08:43.805 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:08:43.808 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"1 = 1 AND","Page":1,"PageSize":30}
+2025-08-18 13:08:43.842 +05:30 [INF] Fetched 15 books from DB.
+2025-08-18 13:08:43.842 +05:30 [INF] Fetched 15 books successfully.
+2025-08-18 13:08:43.843 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:17:45.029 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:17:45.212 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"1 = 1 AND","Page":1,"PageSize":10}
+2025-08-18 13:17:46.043 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 13:17:46.044 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 13:17:46.106 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:18:06.000 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:18:06.022 +05:30 [INF] Deleting book with SID or Title: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af
+2025-08-18 13:18:06.316 +05:30 [INF] Book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af marked as deleted.
+2025-08-18 13:18:06.316 +05:30 [INF] Book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af deleted successfully.
+2025-08-18 13:18:06.317 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:20:14.737 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:20:14.764 +05:30 [INF] Fetching book by SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af
+2025-08-18 13:20:14.828 +05:30 [WRN] No book found with SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af
+2025-08-18 13:20:14.829 +05:30 [INF] Fetched book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af successfully.
+2025-08-18 13:20:14.831 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:20:18.413 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:20:18.415 +05:30 [INF] Fetching book by SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af
+2025-08-18 13:20:18.432 +05:30 [WRN] No book found with SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af
+2025-08-18 13:20:18.432 +05:30 [INF] Fetched book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e6442af successfully.
+2025-08-18 13:20:18.433 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:20:39.008 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:20:39.010 +05:30 [INF] Fetching book by SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442
+2025-08-18 13:20:39.021 +05:30 [WRN] No book found with SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442
+2025-08-18 13:20:39.021 +05:30 [INF] Fetched book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e6442 successfully.
+2025-08-18 13:20:39.022 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:20:41.347 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:20:41.354 +05:30 [INF] Fetching book by SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442
+2025-08-18 13:20:41.365 +05:30 [WRN] No book found with SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442
+2025-08-18 13:20:41.366 +05:30 [INF] Fetched book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e6442 successfully.
+2025-08-18 13:20:41.366 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:20:42.029 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:20:42.030 +05:30 [INF] Fetching book by SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442
+2025-08-18 13:20:42.037 +05:30 [WRN] No book found with SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e6442
+2025-08-18 13:20:42.037 +05:30 [INF] Fetched book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e6442 successfully.
+2025-08-18 13:20:42.038 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:20:44.645 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:20:44.647 +05:30 [INF] Fetching book by SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e64
+2025-08-18 13:20:44.653 +05:30 [WRN] No book found with SID: BSIDfd72a1ad-74a6-47b9-a438-42d09e64
+2025-08-18 13:20:44.653 +05:30 [INF] Fetched book with SID BSIDfd72a1ad-74a6-47b9-a438-42d09e64 successfully.
+2025-08-18 13:20:44.654 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:23:24.923 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:23:25.112 +05:30 [INF] Fetching book by SID: vn 09fwhbw
+2025-08-18 13:23:25.860 +05:30 [WRN] No book found with SID: vn 09fwhbw
+2025-08-18 13:23:25.860 +05:30 [INF] Fetched book with SID vn 09fwhbw successfully.
+2025-08-18 13:23:25.918 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:23:31.111 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:23:31.118 +05:30 [INF] Fetching book by SID: vn09fwhbw
+2025-08-18 13:23:31.178 +05:30 [WRN] No book found with SID: vn09fwhbw
+2025-08-18 13:23:31.178 +05:30 [INF] Fetched book with SID vn09fwhbw successfully.
+2025-08-18 13:23:31.179 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:24:05.321 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:24:05.335 +05:30 [INF] Fetching book by SID: BSID-8064323C-4C24-4234-8969-9ECE072AABAE
+2025-08-18 13:24:05.412 +05:30 [INF] Book found: {"BookSid":"BSID-8064323C-4C24-4234-8969-9ECE072AABAE","Title":"To Kill a Mockingbird","Author":"Harper Lee","Isbn":"978-0-06-112008-4","PublishedYear":1960,"IsAvailable":1,"CreatedAt":"2025-08-14T05:15:11.9900000","UpdatedAt":"2025-08-14T05:15:11.9900000","$type":"BookResponseModel"}
+2025-08-18 13:24:05.418 +05:30 [INF] Fetched book with SID BSID-8064323C-4C24-4234-8969-9ECE072AABAE successfully.
+2025-08-18 13:24:05.422 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:24:09.433 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:24:09.434 +05:30 [INF] Fetching book by SID: BSID-8064323C-44-4234-8969-9ECE072AABAE
+2025-08-18 13:24:09.442 +05:30 [WRN] No book found with SID: BSID-8064323C-44-4234-8969-9ECE072AABAE
+2025-08-18 13:24:09.442 +05:30 [INF] Fetched book with SID BSID-8064323C-44-4234-8969-9ECE072AABAE successfully.
+2025-08-18 13:24:09.442 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:25:01.759 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:25:01.916 +05:30 [INF] Fetching book by SID: buobuv
+2025-08-18 13:25:02.646 +05:30 [WRN] No book found with SID: buobuv
+2025-08-18 13:25:02.646 +05:30 [INF] Fetched book with SID buobuv successfully.
+2025-08-18 13:25:02.703 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:25:34.950 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:25:40.196 +05:30 [INF] Fetching book by SID: bu9e8g9ewg
+2025-08-18 13:25:59.573 +05:30 [WRN] No book found with SID: bu9e8g9ewg
+2025-08-18 13:27:51.786 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:27:51.969 +05:30 [INF] Fetching book by SID: uikjvouv
+2025-08-18 13:27:52.709 +05:30 [WRN] No book found with SID: uikjvouv
+2025-08-18 13:27:52.710 +05:30 [WRN] No book found with SID: uikjvouv
+2025-08-18 13:27:52.716 +05:30 [WRN] Custom HttpStatusCodeException: No book found with SID: {BookSid}
+Common.HttpStatusCodeException: No book found with SID: {BookSid}
+   at Service.Repository.Implementation.BookRepository.GetBookBySid(String bookSid) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 78
+   at DemoProject.Controllers.BookController.GetBookById(String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 41
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 13:27:52.774 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:29:55.022 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:29:55.085 +05:30 [INF] Creating multiple books. Count: 2
+2025-08-18 13:29:55.357 +05:30 [INF] Successfully created 2 books.
+2025-08-18 13:29:55.357 +05:30 [INF] Multiple books created successfully. Count: 2
+2025-08-18 13:29:55.376 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:30:07.683 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:30:07.725 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"1 = 1 AND","Page":1,"PageSize":10}
+2025-08-18 13:30:07.821 +05:30 [INF] Fetched 10 books from DB.
+2025-08-18 13:30:07.821 +05:30 [INF] Fetched 10 books successfully.
+2025-08-18 13:30:07.821 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 13:36:10.919 +05:30 [INF] ::::In Middleware::::
+2025-08-18 13:36:10.941 +05:30 [INF] Deleting book with SID or Title: bjhbbhbjhb
+2025-08-18 13:36:11.080 +05:30 [WRN] Book not found for deletion. SID/Title: bjhbbhbjhb
+2025-08-18 13:36:11.080 +05:30 [WRN] Delete failed for book bjhbbhbjhb. Reason: Book not found
+2025-08-18 13:36:11.081 +05:30 [WRN] Custom HttpStatusCodeException: Book not found
+Common.HttpStatusCodeException: Book not found
+   at Service.Repository.Implementation.BookRepository.DeleteAsync(String booksid) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 229
+   at DemoProject.Controllers.BookController.Delete(String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 97
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 13:36:11.084 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:20:33.197 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:20:33.203 +05:30 [INF] Deleting book with SID or Title: bjhbbhbjhb
+2025-08-18 14:20:33.255 +05:30 [WRN] Book not found for deletion. SID/Title: bjhbbhbjhb
+2025-08-18 14:20:33.255 +05:30 [WRN] Delete failed for book bjhbbhbjhb. Reason: Book not found
+2025-08-18 14:20:33.258 +05:30 [WRN] Custom HttpStatusCodeException: Book not found
+Common.HttpStatusCodeException: Book not found
+   at Service.Repository.Implementation.BookRepository.DeleteAsync(String booksid) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 229
+   at DemoProject.Controllers.BookController.Delete(String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 97
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 14:20:33.260 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:20:40.743 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:20:40.759 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"G","Filters":"1 = 1 AND","Page":1,"PageSize":10}
+2025-08-18 14:20:40.789 +05:30 [INF] Fetched 7 books from DB.
+2025-08-18 14:20:40.790 +05:30 [INF] Fetched 7 books successfully.
+2025-08-18 14:20:40.791 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:20:56.757 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:20:56.759 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"Kish","Filters":"1 = 1 AND","Page":1,"PageSize":10}
+2025-08-18 14:20:56.778 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 14:20:56.778 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 14:20:56.779 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:21:13.520 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:21:13.546 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( PublishedYear > 1900 ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:21:13.580 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 14:21:13.580 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 14:21:13.581 +05:30 [INF] ::::::End of Middleware::::
