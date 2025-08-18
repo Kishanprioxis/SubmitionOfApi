@@ -145,6 +145,11 @@ public class BookRepository : IBookRepository
             List<Book> bookList = new();
             foreach (BookRequestModel book in books)
             {
+                var temp = await _unitOfWork.GetRepository<Book>().SingleOrDefaultAsync(x => x.Isbn == book.Isbn);
+                if (temp != null)
+                {
+                    throw new HttpStatusCodeException((int)StatusCode.Forbidden, "Book already exists with this ISBN");
+                }
                 Book b = new Book
                 {
                     BookSid = "BSID" + Guid.NewGuid().ToString(),

@@ -538,3 +538,25 @@ Common.HttpStatusCodeException: No book found with SID: {BookSid}
 2025-08-18 15:01:54.101 +05:30 [INF] Fetched 1 books from DB.
 2025-08-18 15:01:54.101 +05:30 [INF] Fetched 1 books successfully.
 2025-08-18 15:01:54.162 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 15:29:59.170 +05:30 [INF] ::::In Middleware::::
+2025-08-18 15:29:59.377 +05:30 [INF] Creating multiple books. Count: 1
+2025-08-18 15:30:00.136 +05:30 [WRN] Cannot create multiple books
+Common.HttpStatusCodeException: Book already exists with this ISBN
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 151
+2025-08-18 15:30:00.147 +05:30 [WRN] Custom HttpStatusCodeException: Book already exists with this ISBN
+Common.HttpStatusCodeException: Book already exists with this ISBN
+   at Service.Repository.Implementation.BookRepository.CreateAsyncMul(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 193
+   at DemoProject.Controllers.BookController.CreateAsync(List`1 books) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 69
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 15:30:00.154 +05:30 [INF] ::::::End of Middleware::::
