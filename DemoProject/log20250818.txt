@@ -468,3 +468,59 @@ Common.HttpStatusCodeException: Book not found
 2025-08-18 14:21:13.580 +05:30 [INF] Fetched 1 books from DB.
 2025-08-18 14:21:13.580 +05:30 [INF] Fetched 1 books successfully.
 2025-08-18 14:21:13.581 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:29:15.271 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:29:15.284 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZA' ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:29:15.348 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 14:29:15.348 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 14:29:15.348 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:29:23.311 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:29:23.312 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZ' ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:29:23.345 +05:30 [INF] Fetched 0 books from DB.
+2025-08-18 14:29:23.345 +05:30 [WRN] No books found for search: {"SearchText":null,"Page":1,"PageSize":10,"SortColumn":null,"SortOrder":null,"Filters":"[{\"key\":\"Author\",\"value\":\"XYZ\",\"condition\":\"=\"},{\"key\":\"BookSID\",\"value\":\"BSIDd6115143-f756-49fd-b0ec-a5686bfc830a\",\"condition\":\"=\"}]","$type":"SearchRequestModel"}
+2025-08-18 14:29:23.390 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:29:33.205 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:29:33.206 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZA' ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:29:33.218 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 14:29:33.218 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 14:29:33.219 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:29:42.854 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:29:42.855 +05:30 [INF] Fetching book by SID: uikjvouv
+2025-08-18 14:29:42.863 +05:30 [WRN] No book found with SID: uikjvouv
+2025-08-18 14:29:42.863 +05:30 [WRN] No book found with SID: uikjvouv
+2025-08-18 14:29:42.865 +05:30 [WRN] Custom HttpStatusCodeException: No book found with SID: {BookSid}
+Common.HttpStatusCodeException: No book found with SID: {BookSid}
+   at Service.Repository.Implementation.BookRepository.GetBookBySid(String bookSid) in /Users/kishanchudasama/PrioxisTech/DemoProject/Service/Repository/Implementation/BookRepository.cs:line 78
+   at DemoProject.Controllers.BookController.GetBookById(String BookSID) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Controllers/BookController.cs:line 41
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/kishanchudasama/PrioxisTech/DemoProject/DemoProject/Middlewares/ExceptionMiddleware.cs:line 26
+2025-08-18 14:29:42.868 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:29:49.782 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:29:49.784 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZ' ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:29:49.795 +05:30 [INF] Fetched 0 books from DB.
+2025-08-18 14:29:49.795 +05:30 [WRN] No books found for search: {"SearchText":null,"Page":1,"PageSize":10,"SortColumn":null,"SortOrder":null,"Filters":"[{\"key\":\"Author\",\"value\":\"XYZ\",\"condition\":\"=\"},{\"key\":\"BookSID\",\"value\":\"BSIDd6115143-f756-49fd-b0ec-a5686bfc830a\",\"condition\":\"=\"}]","$type":"SearchRequestModel"}
+2025-08-18 14:29:49.797 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:33:16.481 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:33:16.725 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZ' ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:33:17.479 +05:30 [INF] Fetched 0 books from DB.
+2025-08-18 14:33:17.480 +05:30 [WRN] No books found for search: {"SearchText":null,"Page":1,"PageSize":10,"SortColumn":null,"SortOrder":null,"Filters":"[{\"key\":\"Author\",\"value\":\"XYZ\",\"condition\":\"=\"},{\"key\":\"BookSID\",\"value\":\"BSIDd6115143-f756-49fd-b0ec-a5686bfc830a\",\"condition\":\"=\"}]","$type":"SearchRequestModel"}
+2025-08-18 14:33:17.547 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:34:44.060 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:34:44.303 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZ' ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:34:45.011 +05:30 [INF] Fetched 0 books from DB.
+2025-08-18 14:34:45.012 +05:30 [WRN] No books found for search: {"SearchText":null,"Page":1,"PageSize":10,"SortColumn":null,"SortOrder":null,"Filters":"[{\"key\":\"Author\",\"value\":\"XYZ\",\"condition\":\"=\"},{\"key\":\"BookSID\",\"value\":\"BSIDd6115143-f756-49fd-b0ec-a5686bfc830a\",\"condition\":\"=\"}]","$type":"SearchRequestModel"}
+2025-08-18 14:34:45.077 +05:30 [INF] ::::::End of Middleware::::
+2025-08-18 14:35:05.462 +05:30 [INF] ::::In Middleware::::
+2025-08-18 14:35:05.478 +05:30 [INF] Fetching books with parameters: {"SortColumn":"UpdatedAt","SortOrder":"DESC","SearchText":"%","Filters":"( Author = 'XYZA' ) AND ( BookSID = 'BSIDd6115143-f756-49fd-b0ec-a5686bfc830a' ) AND","Page":1,"PageSize":10}
+2025-08-18 14:35:05.579 +05:30 [INF] Fetched 1 books from DB.
+2025-08-18 14:35:05.579 +05:30 [INF] Fetched 1 books successfully.
+2025-08-18 14:35:05.594 +05:30 [INF] ::::::End of Middleware::::

@@ -40,10 +40,19 @@ public class BookRepository : IBookRepository
             var res = await _spContext.ExecutreStoreProcedureResultList(query, param);
             List<BookResponseModel> list =
                 JsonConvert.DeserializeObject<List<BookResponseModel>>(res.Result?.ToString() ?? "[]") ?? [];
+            if (list == null && list?.Count() == 0)
+            {
+                throw new HttpStatusCodeException(400, "No books found");
+            }
 
             Log.Information("Fetched {Count} books from DB.", list?.Count ?? 0);
 
             return list ?? new List<BookResponseModel>();
+        }
+        catch (HttpStatusCodeException ex)
+        {
+            Log.Warning(ex, "No List Found");
+            throw new HttpStatusCodeException(ex.StatusCode, ex.Message);
         }
         catch (Exception ex)
         {
@@ -150,6 +159,11 @@ public class BookRepository : IBookRepository
                 bookList.Add(b);
             }
 
+            if (bookList.Count == 0)
+            {
+                throw new HttpStatusCodeException(400, "Cannot Add books");
+            }
+
             await _unitOfWork.GetRepository<Book>().InsertAsync(bookList);
             await _unitOfWork.CommitAsync();
 
@@ -167,6 +181,11 @@ public class BookRepository : IBookRepository
 
             Log.Information("Successfully created {Count} books.", resBooks.Count);
             return resBooks;
+        }
+        catch (HttpStatusCodeException ex)
+        {
+            Log.Warning(ex, "Cannot create multiple books");
+            throw new HttpStatusCodeException(ex.StatusCode, ex.Message);
         }
         catch (Exception ex)
         {
