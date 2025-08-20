@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Models.CommonModel;
 using Models.RequestModel;
 using Models.ResponseModel;
+using Newtonsoft.Json;
 using Service.Repository.Interface;
 using Serilog; 
 
@@ -20,19 +21,25 @@ namespace DemoProject.Controllers
         }
 
         [HttpGet("getAllBooks")]
-        public async Task<ActionResult<IEnumerable<BookResponseModel>>> GetAllBooks([FromQuery] SearchRequestModel searchRequestModel)
+        public async Task<ActionResult> GetAllBooks([FromQuery] SearchRequestModel searchRequestModel)
         {
             var parameters = FillParamesFromModel(searchRequestModel);
             var list = await _bookRepository.List(parameters);
-
-            if (list == null || !list.Any())
+            List<BookResponseModel> abc =
+                JsonConvert.DeserializeObject<List<BookResponseModel>>(list.Result?.ToString() ?? "[]") ?? [];
+            if (abc == null)
+            {
+                BadRequest();
+            }
+            list.Result = abc;
+            if (abc == null || !abc.Any())
             {
                 Log.Warning("No books found for search: {@SearchParams}", searchRequestModel);
                 return NotFound();
             }
 
-            Log.Information("Fetched {Count} books successfully.", list.Count);
-            return Ok(list);
+            Log.Information("Fetched {Count} books successfully.", abc.Count);
+            return Ok(BindSearchResult(list,searchRequestModel,"my list"));
         }
 
         [HttpGet("getBookBySId/{BookSID}")]

@@ -2,6 +2,7 @@ using System.Linq.Expressions;
 using AutoMapper;
 using Common;
 using Models.Book;
+using Models.CommonModel;
 using Models.RequestModel;
 using Models.ResponseModel;
 using Models.SpDbContext;
@@ -27,7 +28,7 @@ public class BookRepository : IBookRepository
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<List<BookResponseModel>> List(Dictionary<string, object> parameters)
+    public async Task<Page> List(Dictionary<string, object> parameters)
     {
         try
         {
@@ -38,16 +39,16 @@ public class BookRepository : IBookRepository
             object[] param = { xmlParams };
 
             var res = await _spContext.ExecutreStoreProcedureResultList(query, param);
-            List<BookResponseModel> list =
-                JsonConvert.DeserializeObject<List<BookResponseModel>>(res.Result?.ToString() ?? "[]") ?? [];
-            if (list == null && list?.Count() == 0)
-            {
-                throw new HttpStatusCodeException((int)StatusCode.BadRequest, "No books found");
-            }
+           
+           
+            // if (list == null && list?.Count() == 0)
+            // {
+            //     throw new HttpStatusCodeException((int)StatusCode.BadRequest, "No books found");
+            // }
+            //
+            // Log.Information("Fetched {Count} books from DB.", list?.Count ?? 0);
 
-            Log.Information("Fetched {Count} books from DB.", list?.Count ?? 0);
-
-            return list ?? new List<BookResponseModel>();
+            return res;
         }
         catch (HttpStatusCodeException ex)
         {

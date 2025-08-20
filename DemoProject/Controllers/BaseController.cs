@@ -1,5 +1,6 @@
 using System.Globalization;
 using Common;
+using DemoProject.Helper;
 using Microsoft.AspNetCore.Mvc;
 using Models.CommonModel;
 using Newtonsoft.Json;
@@ -278,6 +279,40 @@ namespace DemoProject.Controllers;
             return $"( {query} )";
         }
 
+        #endregion
+        #region Bind Search Result
+        /// <summary>
+        /// Binds search results and updates metadata for pagination.
+        /// </summary>
+        /// <param name="list">The Page object containing search results.</param>
+        /// <param name="model">The search request model.</param>
+        /// <param name="key">The key for identifying the search.</param>
+        /// <returns>The updated Page object with metadata.</returns>
+        [NonAction]
+        public Page BindSearchResult(Page list, SearchRequestModel model, string key)
+        {
+            list.Meta.FirstPageUrl = HttpContext.Request.HttpContext.AddOrReplaceQueryParameter("page", "1");
+            list.Meta.Url = HttpContext.Request.HttpContext.AddOrReplaceQueryParameter("page", model.Page.ToString());
+            list.Meta.Page = model.Page;
+            list.Meta.PageSize = model.PageSize;
+
+            if (list.Meta.TotalResults > 0)
+            {
+                if (list.Meta.TotalResults > (model.Page * model.PageSize))
+                {
+                    list.Meta.NextPageUrl = HttpContext.Request.HttpContext.AddOrReplaceQueryParameter("page", (model.Page + 1).ToString());
+                }
+                if (model.Page > 1)
+                {
+                    list.Meta.PreviousPageUrl = HttpContext.Request.HttpContext.AddOrReplaceQueryParameter("page", (model.Page - 1).ToString());
+                }
+
+                list.Meta.TotalPages = (int)Math.Ceiling((double)list.Meta.TotalResults / model.PageSize);
+            }
+
+            list.Meta.Key = key;
+            return list;
+        }
         #endregion
 
         #region To Escape Xml
